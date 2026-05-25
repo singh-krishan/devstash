@@ -1,5 +1,5 @@
-export default function Home() {
-  return (
-    <h1>Devstash</h1>
-  );
+import DashboardPage from '@/components/dashboard/DashboardPage';
+
+export default function Page() {
+  return <DashboardPage />;
 }
