@@ -1,6 +1,6 @@
 # Current Feature
 
-Dashboard UI — Phase 1
+Dashboard UI — Phase 2
 
 ## Status
 
@@ -8,23 +8,22 @@ Complete
 
 ## Goals
 
-Build the core dashboard layout and UI shell. No real data yet — use mock data.
+Enhance the sidebar with collapsible behavior, navigation links, favorites/recent collections, user avatar area, and drawer support on mobile.
 
-- [x] App shell: top navbar with logo, search bar, and user avatar
-- [x] Collapsible sidebar with: item type filters (Snippet, Prompt, Note, Command, File, Image, URL), collections list, and favorites section
-- [x] Main workspace: grid/list toggle view of item cards
-- [x] Item card component showing title, type badge, tags, and timestamp
-- [x] Empty state for when no items exist
-- [x] Dark mode as default (already set up via Tailwind v4)
-- [x] Mobile-responsive: sidebar becomes a drawer on small screens
+- [x] Collapsible sidebar (expand/collapse toggle)
+- [x] Item type links navigating to `/items/TYPE` (e.g. `/items/snippets`)
+- [x] Favorite collections section in sidebar
+- [x] Most recent collections section in sidebar
+- [x] User avatar area at the bottom of the sidebar
+- [x] Drawer icon to open/close sidebar
+- [x] Always a drawer on mobile view
 
 ## Notes
 
-- Reference screenshots in `context/screenshots/` for layout direction — not pixel-perfect, just directional
-- Use shadcn/ui components where available
-- Wire up mock data from `context/` folder; no API calls yet
-- Keep sidebar collapsible state in local component state (no global store needed yet)
-- Item cards are display-only in this phase — no click-through required
+- Reference `context/screenshots/dashboard-ui-main.png` and `dashboard-ui-drawer.png` for layout direction
+- Use mock data from `src/lib/mock-data.ts` — import directly, no API calls yet
+- See `context/features/dashboard-phase-1-spec.md` for prior work context
+- See `context/features/dashboard-phase-3-spec.md` for upcoming work
 
 ## History
 
@@ -32,3 +31,4 @@ Build the core dashboard layout and UI shell. No real data yet — use mock data
 
 - Project setup and boilerplate cleanup
 - Dashboard UI Phase 1: navbar, collapsible sidebar with type filters + collections, collections grid, pinned items list, ItemCard (grid/list), EmptyState, grid/list toggle wired to sidebar type filter
+- Dashboard UI Phase 2: collapsible sidebar (icon-only mode on desktop), type items as Next.js Links to /items/[type], Favorites + Recent collection sections, DashboardLayout shared shell, /items/[type] route with grid/list toggle
