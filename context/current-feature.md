@@ -15,7 +15,7 @@ Set up Prisma ORM with Neon PostgreSQL (serverless) as the database layer.
 - [x] Create initial Prisma schema from data models in `context/project-overview.md`
 - [x] Include NextAuth models (Account, Session, VerificationToken)
 - [x] Add indexes and cascade deletes where appropriate
-- [ ] Run initial migration with `prisma migrate dev` — requires real DATABASE_URL in `.env`
+- [x] Run initial migration with `prisma migrate dev` — requires real DATABASE_URL in `.env`
 
 ## Notes
 
