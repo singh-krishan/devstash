@@ -1,5 +1,39 @@
 # Current Feature
 
+Seed Data
+
+## Status
+
+Complete
+
+## Goals
+
+Populate the database with a demo user, system item types, collections, and items for development and demos.
+
+- [x] Install `bcryptjs` and `@types/bcryptjs`
+- [x] Create demo user (demo@devstash.io, password hashed with bcryptjs, 12 rounds)
+- [x] Seed 7 system item types (Snippet, Prompt, Command, Note, File, Image, Link)
+- [x] Create 5 collections: React Patterns, AI Workflows, DevOps, Terminal Commands, Design Resources
+- [x] Seed items per collection (see spec for counts and types)
+- [x] Run `npx prisma db seed` and verify data in Neon
+
+## Notes
+
+- System item types already partially seeded — update to match spec (icons/colors may differ)
+- Use `upsert` throughout so the script is safe to re-run
+- Password: `12345678`, hashed with bcryptjs at 12 rounds
+- Use real URLs for link items (DevOps and Design Resources collections)
+
+## References
+
+- `context/features/seed-spec.md`
+- `prisma/seed.ts` (existing seed script to extend)
+- `context/coding-standards.md`
+
+---
+
+# Previous Feature
+
 Database Setup — Prisma + Neon PostgreSQL
 
 ## Status
@@ -65,3 +99,4 @@ Enhance the main dashboard area with stats, recent items, and a polished layout.
 - Dashboard UI Phase 2: collapsible sidebar (icon-only mode on desktop), type items as Next.js Links to /items/[type], Favorites + Recent collection sections, DashboardLayout shared shell, /items/[type] route with grid/list toggle
 - Dashboard UI Phase 3: 4 stats cards (total items, collections, favorites), recent collections grid, pinned items, 10 recent items list, StatsCard component
 - Database Setup: Prisma 7 + Neon PostgreSQL, full schema (User, Item, ItemType, Collection, Tag, ItemTag + NextAuth models), prisma.config.ts, db.ts singleton, postinstall generate script
+- Seed Data: demo user (demo@devstash.io), 7 system item types, 5 collections (React Patterns, AI Workflows, DevOps, Terminal Commands, Design Resources), 18 items across all types
